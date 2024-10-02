@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Meat Express</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+     {% if messages %}
+    <div class="alert-container">
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %}
+      </div>
+      {% endif %}
+    {% endwith %}
+    <div class="container">
+        <h2>Admin Login</h2>
+        <form method="POST" action="{{ url_for('admin_login') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="admin-email">Email:</label>
+                {{ form.email(class="form-control", id="admin-email") }}
+            </div>
+            <div class="form-group">
+                <label for="admin-password">Password:</label>
+                {{ form.password(class="form-control", id="admin-password") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</body>
+</html>

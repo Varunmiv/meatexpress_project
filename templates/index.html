@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="../static/images/favicon.png" type="">
+
+  <title> MeatExpress </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  
+
+  <!-- nice select  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="../static/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+ 
+  
+  <style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+
+
+
+
+ <!-- jQuery -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ <!-- Isotope -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+ <!-- Your Custom CSS -->
+ <link rel="stylesheet" href="../static/css/style.css">
+
+
+</head>
+
+
+<body>
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="../static/images/bgim.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              MeatExpress
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto ">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('menu')}}">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about')}}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('book')}}">Bulk Order</a>
+              </li>
+            </ul>
+            <div class="user_option">
+              <a href="{{ url_for('dashboard')}}" class="user_link">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+              <a class="cart_link" href="#">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                  <g>
+                    <g>
+                      <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                   c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                   C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                   c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                   C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                   c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                    </g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                </svg>
+              </a>
+              
+              <a href="{{ url_for('menu')}}" class="order_online">
+                Order Online
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header> 
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 col-lg-6 ">
+                  <div class="detail-box">
+                    <h1>Choose The Best</h1>
+                    <p>
+                      We deliver the best meat from the top expert butchers in the city. MeatExpress is known for the quality and premium meat selection. The farm fresh mest is delivered to every customer to satisfy their cravings.
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        Order Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 col-lg-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      Fresh Cuts,   Fresh Delivery
+                    </h1>
+                    <p>
+                       We make Fresh cuts each time after getting an order, and you can experience the difference with our farm-fresh meats!. tender, juicy, and delivered with care to you. We have the door step delivery facility to give buyers a easy purchase of meat over the online.   
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        Order Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 col-lg-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      Wide Selection
+                    </h1>
+                    <p>
+                      Offering a variety of meat products to cater to difeerent customer preferences, including organic, grass-fed, and specialty cuts. We have various of meat products, such as chicken, mutton, pork, and seafood, for home delivery.
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        Order Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <ol class="carousel-indicators">
+            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+            <li data-target="#customCarousel1" data-slide-to="1"></li>
+            <li data-target="#customCarousel1" data-slide-to="2"></li>
+          </ol>
+        </div>
+      </div>
+
+    </section>
+                
+    <!-- end slider section -->
+  </div>
+
+  <!-- offer section -->
+   
+  <!-- offer section -->
+  <!-- offer section -->
+
+  <section class="offer_section layout_padding-bottom">
+    <div class="offer_container">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6  ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="../static/images/io1.jpeg" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Tasty Thursdays
+                </h5>
+                <h6>
+                  <span>20%</span> Off
+                </h6>
+                <a href="">
+                  Order Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                     c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                     C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                     c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                     C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                     c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                      </g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6  ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="../static/images/io2.jpg" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  seafood sunday
+                </h5>
+                <h6>
+                  <span>15%</span> Off
+                </h6>
+                <a href="">
+                  Order Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                     c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                     C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                     c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                     C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                     c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                      </g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end offer section -->
+  <section class="food_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our Menu
+        </h2>
+      </div>
+
+      <ul class="filters_menu">
+        <li class="active" data-filter="*">All</li>
+        <li data-filter=".Mutton">Mutton</li>
+        <li data-filter=".Poultry">Poultry</li>
+        <li data-filter=".seafood">Seafood</li>
+        <li data-filter=".Others">Others</li>
+      </ul>
+
+      <div class="filters-content">
+        <div class="row grid">
+          <div class="col-sm-6 col-lg-4 all Poultry">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/chn.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Chicken
+                  </h5>
+                  <p>
+                    
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹250/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="Poultry" data-name="Chicken" data-price="250">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all Mutton">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/lamb.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Lamb Mutton
+                  </h5>
+                  <p>
+                    
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹700/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="Mutton" data-name="Lamb Mutton" data-price="700">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all Mutton">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/beef.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    beef 
+                  </h5>
+                  <p>
+                    
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹300/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="Mutton" data-name="beef" data-price="300">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all Mutton">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/mcct.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Mutton Curry cuts
+                  </h5>
+                  <p>
+                    
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹750/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="Mutton" data-name="Mutton curry cuts" data-price="750">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all seafood">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/fsh.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Sea Fish
+                  </h5>
+                  <p>
+                    
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹300/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="seafood" data-name="Sea Fish" data-price="300">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all Others">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/cklvr.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Chicken Liver
+                  </h5>
+                  <p>
+                    
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹150/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="Others" data-name="Chicken Liver" data-price="150">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all Poultry">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/emu.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Emu
+                  </h5>
+                  <p>
+                    
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹290/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="Poultry" data-name="Emu" data-price="290">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all Mutton">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/prk.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Pork
+                  </h5>
+                  <p>
+                    
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹300/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="Mutton" data-name="Pork" data-price="300">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all Mutton">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/rbt.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Lapin(Rabbit)
+                  </h5>
+                  <p>
+                    
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹800/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="Mutton" data-name="Rabbit" data-price="800">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all Poultry">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/prwn.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Prawns
+                  </h5>
+                  <p>
+                    
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹480/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="Poultry" data-name="Prawns" data-price="480">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="{{ url_for('more')}}">
+          View More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end food section -->
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
+
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="../static/images/drm.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                We Are MeatExpress
+              </h2>
+            </div>
+            <p>
+               MeatExpress is an online service that allows customers to order various types of meat products, such as beef, chicken, pork, and seafood, for home delivery. MeatExpress platforms typically partner with local farms, butchers, or suppliers to source high-quality, fresh meat products. MeatExpress aims to provide customers with a convenient and reliable way to access high-quality meat products without having to visit a physical store.
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+
+  <!-- book section -->
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Bulk Order
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="">
+              <div>
+                <input type="text" class="form-control" placeholder="Your Name" />
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Phone Number" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Your Email" />
+              </div>
+              <div>
+                <input type="text"  class="form-control" placeholder="Quantity?" />
+              </div>
+              <div>
+                <input type="date" class="form-control">
+              </div>
+              <div class="btn_box">
+                <button>
+                  Book Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="map_container ">
+            <div id="googleMap"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end book section -->
+
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding-bottom">
+    <div class="container">
+        <div class="heading_container heading_center psudo_white_primary mb_45">
+            <h2>What Says Our Customers</h2>
+        </div>
+        <div class="carousel-wrap row">
+            <div class="owl-carousel client_owl-carousel">
+                <div class="item">
+                    <div class="box">
+                        <div class="detail-box">
+                            <p>Easy meat purchase, more variety of products and the meat quality is also really nice.</p>
+                            <h6>Pooja Thakur</h6>
+                            <p>Best in the city</p>
+                        </div>
+                        <div class="img-box">
+                            <img src="static/images/c02.jpg" alt="" class="box-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box">
+                        <div class="detail-box">
+                            <p>I got fresh, tender meat and a better delivery experience. Must try once, very convenient and good purchase.</p>
+                            <h6>Meena Kumar</h6>
+                            <p>Good service</p>
+                        </div>
+                        <div class="img-box">
+                            <img src="static/images/c01.jpg" alt="" class="box-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box">
+                        <div class="detail-box">
+                            <p>Easy meat purchase, more variety of products and the meat quality is also really nice.</p>
+                            <h6>Varun</h6>
+                            <p>Good service</p>
+                        </div>
+                        <div class="img-box">
+                            <img src="static/images/c02.jpg" alt="" class="box-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box">
+                        <div class="detail-box">
+                            <p>I got fresh, tender meat and a better delivery experience. Must try once, very convenient and good purchase.</p>
+                            <h6>Ayesha</h6>
+                            <p>Good service</p>
+                        </div>
+                        <div class="img-box">
+                            <img src="static/images/c01.jpg" alt="" class="box-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- end client section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-col">
+          <div class="footer_contact">
+            <h4>
+              Contact Us
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  meatexpress@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="footer_detail">
+            <a href="" class="footer-logo">
+              MeatExpress
+            </a>
+            <p>
+              We place a high priority on freshness, expert-butchering skills, and consistently pleasing our Customers.
+            </p>
+            <div class="footer_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <h4>
+            Service Hours
+          </h4>
+          <p>
+            Everyday
+          </p>
+          <p>
+            06.00 Am -10.00 Pm
+          </p>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Meat Express</a><br><br>
+        
+        
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQuery (loaded via CDN) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQery -->
+  <script src="../static/js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- Bootstrap JS -->
+  <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  <!-- Custom JS -->
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- isotope js -->
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+
+  </script>
+  <!-- End Google Map -->
+  <script>
+    function myMap() {
+        // Set the coordinates (latitude and longitude) for the desired location
+        var mapOptions = {
+            center: new google.maps.LatLng(12.9716, 77.5946), // Example coordinates for Bangalore, India
+            zoom: 10, // Adjust the zoom level as needed
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+    
+        // Create a new map object and pass it the options
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+    
+        // Optionally, add a marker at the specified coordinates
+        var marker = new google.maps.Marker({
+            position: mapOptions.center,
+            map: map,
+            title: "My Location"
+        });
+    }
+    </script>
+    
+  <!-- Checkout Modal -->
+<!--cart modal-->
+
+<div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cart Items</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: ₹<span id="cart-total"></span></p>
+            <button id="checkout">Checkout</button>
+        </div>
+      </div>
+<div id="checkoutModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Checkout</h2>
+      <form id="checkout-form">
+          <label for="address">Address:</label><br>
+          <textarea id="address" name="address" required></textarea><br>
+          <label for="mobile">Mobile Number:</label><br>
+          <input type="text" id="mobile" name="mobile" required><br>
+          <label for="payment-method">Payment Method:</label><br>
+          <input type="radio" id="cod" name="payment-method" value="COD" checked> Cash on Delivery<br><br>
+          <button type="submit">Submit Order</button>
+      </form>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var addToCartButtons = document.querySelectorAll('.add-to-cart');
+  addToCartButtons.forEach(function(button) {
+      button.addEventListener('click', function(event) {
+          var name = button.getAttribute('data-name');
+          var price = parseFloat(button.getAttribute('data-price'));
+          addItemToCart(name, price);
+      });
+  });
+
+  function addItemToCart(name, price) {
+      var cart = JSON.parse(localStorage.getItem('cart')) || [];
+      var found = false;
+      for (var i = 0; i < cart.length; i++) {
+          if (cart[i].name === name) {
+              cart[i].quantity += 1;
+              found = true;
+              break;
+          }
+      }
+      if (!found) {
+          cart.push({ name: name, price: price, quantity: 1 });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Item added to cart');
+      updateCartItems();
+  }
+
+  var cartModal = document.getElementById("cartModal");
+  var checkoutModal = document.getElementById("checkoutModal");
+  var btn = document.querySelector(".cart_link");
+  var cartClose = document.getElementsByClassName("close")[0];
+  var checkoutClose = document.getElementsByClassName("close")[1];
+
+  btn.onclick = function() {
+      cartModal.style.display = "block";
+      updateCartItems();
+  }
+
+  cartClose.onclick = function() {
+      cartModal.style.display = "none";
+  }
+
+  checkoutClose.onclick = function() {
+      checkoutModal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+      if (event.target == cartModal || event.target == checkoutModal) {
+          cartModal.style.display = "none";
+          checkoutModal.style.display = "none";
+      }
+  }
+
+  function updateCartItems() {
+      var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      var cartItemsList = document.getElementById("cart-items");
+      var cartTotal = document.getElementById("cart-total");
+
+      cartItemsList.innerHTML = "";
+      var total = 0;
+
+      cartItems.forEach(function(item, index) {
+          var li = document.createElement("li");
+          li.innerHTML = item.name + " - ₹" + item.price + " x " + '<input type="number" value="' + item.quantity + '" min="1" data-index="' + index + '" class="quantity-input">' + ' <button class="remove-item" data-index="' + index + '">Remove</button>';
+          cartItemsList.appendChild(li);
+          total += item.price * item.quantity;
+      });
+
+      cartTotal.textContent = total;
+      attachEventListeners();
+  }
+
+  function attachEventListeners() {
+      var quantityInputs = document.querySelectorAll('.quantity-input');
+      quantityInputs.forEach(function(input) {
+          input.addEventListener('change', function(event) {
+              var index = input.getAttribute('data-index');
+              var cart = JSON.parse(localStorage.getItem('cart')) || [];
+              cart[index].quantity = parseInt(event.target.value);
+              localStorage.setItem('cart', JSON.stringify(cart));
+              updateCartItems();
+          });
+      });
+
+      var removeButtons = document.querySelectorAll('.remove-item');
+      removeButtons.forEach(function(button) {
+          button.addEventListener('click', function(event) {
+              var index = button.getAttribute('data-index');
+              var cart = JSON.parse(localStorage.getItem('cart')) || [];
+              cart.splice(index, 1);
+              localStorage.setItem('cart', JSON.stringify(cart));
+              updateCartItems();
+          });
+      });
+
+      var checkoutButton = document.getElementById('checkout');
+      if (checkoutButton) {
+          checkoutButton.removeEventListener('click', showCheckoutModal);
+          checkoutButton.addEventListener('click', showCheckoutModal);
+      }
+
+      var checkoutForm = document.getElementById('checkout-form');
+      if (checkoutForm) {
+          checkoutForm.removeEventListener('submit', handleCheckoutFormSubmit);
+          checkoutForm.addEventListener('submit', handleCheckoutFormSubmit);
+      }
+  }
+
+  function showCheckoutModal() {
+      cartModal.style.display = "none";
+      checkoutModal.style.display = "block";
+  }
+
+  function handleCheckoutFormSubmit(event) {
+      event.preventDefault();
+      checkoutCart();
+  }
+
+  function checkoutCart() {
+      var cart = JSON.parse(localStorage.getItem('cart')) || [];
+      var address = document.getElementById('address').value;
+      var mobile = document.getElementById('mobile').value;
+      var paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+
+      if (cart.length === 0) {
+          alert('Your cart is empty');
+          return;
+      }
+
+      if (!address || !mobile) {
+          alert('Please provide your address and mobile number');
+          return;
+      }
+
+      fetch('/place_order', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ cart: cart, address: address, mobile: mobile, paymentMethod: paymentMethod })
+      })
+      .then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              localStorage.removeItem('cart');
+              alert('Order placed successfully');
+              checkoutModal.style.display = "none";
+          } else {
+              alert('Failed to place order: ' + data.message);
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          alert('please login to place order.');
+      });
+  }
+
+  updateCartItems();
+});
+
+</script>
+<script>
+$(document).ready(function () {
+    var $grid = $(".grid").isotope({
+        itemSelector: ".all",
+        percentPosition: true,
+        masonry: {
+            columnWidth: ".all"
+        }
+    });
+
+    $('.filters_menu li').on('click', function () {
+        $('.filters_menu li').removeClass('active');
+        $(this).addClass('active');
+
+        var data = $(this).attr('data-filter');
+        $grid.isotope({
+            filter: data
+        });
+    });
+
+    // Reinitialize Isotope on window load
+    $(window).on('load', function () {
+        $grid.isotope('layout');
+    });
+});
+
+</script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+
+</html>

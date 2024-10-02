@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../images/meat.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-container {
+    background-color: white;
+    justify-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-container img.logo {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container .form-group {
+    margin-bottom: 20px;
+    align-items: center;
+
+}
+
+.login-container .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    padding: 10px;
+    width: 20%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.signup-link {
+    margin-top: 20px;
+}
+
+.flash-messages {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001; /* Ensure it is above other content */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.alert-container {
+    
+    max-width: 600px;
+    z-index: 1001;
+    margin: 0 auto;
+}
+
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+.admin-login{
+   margin-top: 20px; 
+}

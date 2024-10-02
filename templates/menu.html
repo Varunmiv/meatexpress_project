@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="../static/images/favicon.png" type="">
+
+  <title> MeatExpress </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="../static/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+  
+  <style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+ /* Search bar styling */
+.form-inline {
+    display: flex;
+    align-items: center;
+    background-color: #ffbe33; /* Change this to the background color of "Order Online" button */
+    border-radius: 50px; /* Adjust this value to match the "Order Online" button */
+    
+}
+
+.form-inline input {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 50px; /* Same as the search bar container */
+    width: 200px; /* Adjust the width as needed */
+}
+
+/* Search icon button */
+.nav_search-btn {
+    background-color: transparent; /* Set to transparent to inherit background from the search bar */
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    color: white; /* Adjust to match the color of other icons */
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.nav_search-btn:hover {
+    background-color: #ffbe33; /* Adjust hover color if needed */
+}
+
+.nav_search-btn i {
+    font-size: 18px; /* Adjust the icon size as needed */
+}
+
+
+</style>
+
+
+
+
+ <!-- jQuery -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ <!-- Isotope -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+ <!-- Your Custom CSS -->
+ <link rel="stylesheet" href="../static/css/style.css">
+
+
+ 
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="../static/images/bgim.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              MeatExpress
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto ">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index')}}">Home </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('menu')}}">Menu <span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about')}}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('book')}}">Bulk Order</a>
+              </li>
+            </ul>
+            <div class="user_option">
+              <a href="{{ url_for('dashboard')}}" class="user_link">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+              <a class="cart_link" href="#">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                  <g>
+                    <g>
+                      <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                   c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                   C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                   c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                   C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                   c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                    </g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                </svg>
+              </a>
+              <form class="form-inline">
+                <input type="text" placeholder="Search" aria-label="Search">
+                <button class="btn nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
+            
+              
+              
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+  
+  <!-- food section -->
+
+  <section class="food_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our Menu
+        </h2>
+      </div>
+
+      <ul class="filters_menu">
+        <li class="active" data-filter="*">All</li>
+        <li data-filter=".burger">Mutton</li>
+        <li data-filter=".pizza">Poultry</li>
+        <li data-filter=".pasta">Seafood</li>
+        <li data-filter=".fries">Others</li>
+      </ul>
+
+      <div class="filters-content">
+        <div class="row grid">
+          <div class="col-sm-6 col-lg-4 all pizza">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src=" ../static/images/chn.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Chicken
+                  </h5>
+                  <p>
+                    Poultrty chicken from the farm
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹250/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="pizza" data-name="Chicken" data-price="250">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all burger">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src=" ../static/images/lamb.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Lamb Mutton
+                  </h5>
+                  <p>
+                    Tender Lamb Meat cuts 
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹700/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="burger" data-name="Lamb Mutton" data-price="700">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all burger">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src=" ../static/images/mcct.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Mutton Curry cuts
+                  </h5>
+                  <p>
+                    suitable for curry
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹750/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="pizza" data-name="Mutton Curry Cuts" data-price="750">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all pasta">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/fsh.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Sea Fish
+                  </h5>
+                  <p>
+                    Pices of sea fish 
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹300/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="pasta" data-name="Sea Fish" data-price="300">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all fries">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/cklvr.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Chicken Liver
+                  </h5>
+                  <p>
+                    Only Chicken liver Pieces
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹150/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="fries" data-name="Chicken Liver" data-price="480">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all pizza">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/emu.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Emu
+                  </h5>
+                  <p>
+                    Emu meat cuts 
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹290/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="pizza" data-name="Emu" data-price="290">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all burger">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/prk.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Pork
+                  </h5>
+                  <p>
+                    Pig meat from cleanest Farms
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹300/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="burger" data-name="Pork" data-price="300">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all burger">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/rbt.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Rabbit
+                  </h5>
+                  <p>
+                    Organically grown Rabbit
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹800/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="burger" data-name="Rabbit" data-price="800">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 all pasta">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="static/images/prwn.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Prawns
+                  </h5>
+                  <p>
+                   Fresh praws of the Sea 
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ₹480/kg
+                    </h6>
+                    <a href="#" class="add-to-cart" data-filter="pasta" data-name="Prawns" data-price="480">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="{{ url_for('more')}}">
+          View More
+        </a>
+      </div>
+    </div>
+  </section>
+  
+ 
+
+  <!-- end food section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-col">
+          <div class="footer_contact">
+            <h4>
+              Contact Us
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  meatexpress@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="footer_detail">
+            <a href="" class="footer-logo">
+              MeatExpress
+            </a>
+            <p>
+              We place a high priority on freshness, expert-butchering skills, and consistently pleasing our Customers.
+            </p>
+            <div class="footer_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <h4>
+            Service Hours
+          </h4>
+          <p>
+            Everyday
+          </p>
+          <p>
+            06.00 Am -10.00 Pm
+          </p>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="{{ url_for('about')}}">Meat Express</a><br><br>
+        
+        
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- isotope js -->
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Cart Items</h2>
+      <ul id="cart-items"></ul>
+      <h3>Total: ₹<span id="cart-total"></span></h3>
+      <button id="checkout">Checkout</button>
+    </div>
+  </div>
+</div>
+
+   <!--cart modal-->
+
+   <div id="cartModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Cart Items</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: ₹<span id="cart-total"></span></p>
+        <button id="checkout">Checkout</button>
+    </div>
+</div>
+
+<div id="checkoutModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Checkout</h2>
+        <form id="checkout-form">
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" required></textarea><br>
+            <label for="mobile">Mobile Number:</label><br>
+            <input type="text" id="mobile" name="mobile" required><br>
+            <label for="payment-method">Payment Method:</label><br>
+            <input type="radio" id="cod" name="payment-method" value="COD" checked> Cash on Delivery<br><br>
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+</div>   
+ 
+<!--cart script-->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var addToCartButtons = document.querySelectorAll('.add-to-cart');
+  addToCartButtons.forEach(function(button) {
+      button.addEventListener('click', function(event) {
+          var name = button.getAttribute('data-name');
+          var price = parseFloat(button.getAttribute('data-price'));
+          addItemToCart(name, price);
+      });
+  });
+
+  function addItemToCart(name, price) {
+      var cart = JSON.parse(localStorage.getItem('cart')) || [];
+      var found = false;
+      for (var i = 0; i < cart.length; i++) {
+          if (cart[i].name === name) {
+              cart[i].quantity += 1;
+              found = true;
+              break;
+          }
+      }
+      if (!found) {
+          cart.push({ name: name, price: price, quantity: 1 });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Item added to cart');
+      updateCartItems();
+  }
+
+  var cartModal = document.getElementById("cartModal");
+  var checkoutModal = document.getElementById("checkoutModal");
+  var btn = document.querySelector(".cart_link");
+  var cartClose = document.getElementsByClassName("close")[0];
+  var checkoutClose = document.getElementsByClassName("close")[1];
+
+  btn.onclick = function() {
+      cartModal.style.display = "block";
+      updateCartItems();
+  }
+
+  cartClose.onclick = function() {
+      cartModal.style.display = "none";
+  }
+
+  checkoutClose.onclick = function() {
+      checkoutModal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+      if (event.target == cartModal || event.target == checkoutModal) {
+          cartModal.style.display = "none";
+          checkoutModal.style.display = "none";
+      }
+  }
+
+  function updateCartItems() {
+      var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      var cartItemsList = document.getElementById("cart-items");
+      var cartTotal = document.getElementById("cart-total");
+
+      cartItemsList.innerHTML = "";
+      var total = 0;
+
+      cartItems.forEach(function(item, index) {
+          var li = document.createElement("li");
+          li.innerHTML = item.name + " - ₹" + item.price + " x " + '<input type="number" value="' + item.quantity + '" min="1" data-index="' + index + '" class="quantity-input">' + ' <button class="remove-item" data-index="' + index + '">Remove</button>';
+          cartItemsList.appendChild(li);
+          total += item.price * item.quantity;
+      });
+
+      cartTotal.textContent = total;
+      attachEventListeners();
+  }
+
+  function attachEventListeners() {
+      var quantityInputs = document.querySelectorAll('.quantity-input');
+      quantityInputs.forEach(function(input) {
+          input.addEventListener('change', function(event) {
+              var index = input.getAttribute('data-index');
+              var cart = JSON.parse(localStorage.getItem('cart')) || [];
+              cart[index].quantity = parseInt(event.target.value);
+              localStorage.setItem('cart', JSON.stringify(cart));
+              updateCartItems();
+          });
+      });
+
+      var removeButtons = document.querySelectorAll('.remove-item');
+      removeButtons.forEach(function(button) {
+          button.addEventListener('click', function(event) {
+              var index = button.getAttribute('data-index');
+              var cart = JSON.parse(localStorage.getItem('cart')) || [];
+              cart.splice(index, 1);
+              localStorage.setItem('cart', JSON.stringify(cart));
+              updateCartItems();
+          });
+      });
+
+      var checkoutButton = document.getElementById('checkout');
+      if (checkoutButton) {
+          checkoutButton.removeEventListener('click', showCheckoutModal);
+          checkoutButton.addEventListener('click', showCheckoutModal);
+      }
+
+      var checkoutForm = document.getElementById('checkout-form');
+      if (checkoutForm) {
+          checkoutForm.removeEventListener('submit', handleCheckoutFormSubmit);
+          checkoutForm.addEventListener('submit', handleCheckoutFormSubmit);
+      }
+  }
+
+  function showCheckoutModal() {
+      cartModal.style.display = "none";
+      checkoutModal.style.display = "block";
+  }
+
+  function handleCheckoutFormSubmit(event) {
+      event.preventDefault();
+      checkoutCart();
+  }
+
+  function checkoutCart() {
+      var cart = JSON.parse(localStorage.getItem('cart')) || [];
+      var address = document.getElementById('address').value;
+      var mobile = document.getElementById('mobile').value;
+      var paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+
+      if (cart.length === 0) {
+          alert('Your cart is empty');
+          return;
+      }
+
+      if (!address || !mobile) {
+          alert('Please provide your address and mobile number');
+          return;
+      }
+
+      fetch('/place_order', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ cart: cart, address: address, mobile: mobile, paymentMethod: paymentMethod })
+      })
+      .then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              localStorage.removeItem('cart');
+              alert('Order placed successfully');
+              checkoutModal.style.display = "none";
+          } else {
+              alert('Failed to place order: ' + data.message);
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          alert('please login to place order.');
+      });
+  }
+
+  updateCartItems();
+});
+
+</script>
+<script>
+document.querySelector('.nav_search-btn').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevents the form from submitting normally
+
+    // Get the search query from the input field
+    const searchQuery = document.querySelector('.form-inline input').value.trim().toLowerCase();
+
+    // Redirect to search results page or filter items on the same page
+    // For filtering on the same page:
+    filterItems(searchQuery);
+});
+
+function filterItems(query) {
+    const items = document.querySelectorAll('.grid .all');
+
+    items.forEach(item => {
+        const itemName = item.querySelector('h5').textContent.toLowerCase();
+
+        if (itemName.includes(query)) {
+            item.style.display = 'block'; // Show matching items
+        } else {
+            item.style.display = 'none'; // Hide non-matching items
+        }
+    });
+}
+
+</script>
+
+
+</body>
+
+</html>
