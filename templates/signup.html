@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Meat Express</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("../static/images/meat.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .signup-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+            height: auto;
+            text-align: center;
+        }
+        .signup-container img.logo {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .signup-container h2 {
+            margin-bottom: 20px;
+        }
+        .signup-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .signup-container label {
+            align-self: flex-start;
+            margin-bottom: 5px;
+        }
+        .signup-container .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .signup-container button {
+            width: 30%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .signup-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="signup-container">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Meat Express Logo" class="logo">
+        <h2>Signup</h2>
+        <form id="signup-form" method="POST" action="{{ url_for('signup') }}">
+            {{ form.hidden_tag() }}
+            
+            <label for="signup-email">Email:</label>
+            {{ form.email(class="form-control", id="signup-email") }}
+            {% if form.email.errors %}
+                <div class="error" style="color: red;">{{ form.email.errors[0] }}</div>
+            {% endif %}
+            
+            <label for="signup-name">Name:</label>
+            {{ form.name(class="form-control", id="signup-name") }}
+            {% if form.name.errors %}
+                <div class="error" style="color: red;">{{ form.name.errors[0] }}</div>
+            {% endif %}
+            
+            <label for="signup-phone">Phone:</label>
+            {{ form.phone(class="form-control", id="signup-phone") }}
+            {% if form.phone.errors %}
+                <div class="error" style="color: red;">{{ form.phone.errors[0] }}</div>
+            {% endif %}
+            
+            <label for="signup-password">Password:</label>
+            {{ form.password(class="form-control", id="signup-password") }}
+            {% if form.password.errors %}
+                <div class="error" style="color: red;">{{ form.password.errors[0] }}</div>
+            {% endif %}
+            
+            <label for="signup-confirm-password">Confirm Password:</label>
+            {{ form.confirm_password(class="form-control", id="signup-confirm-password") }}
+            {% if form.confirm_password.errors %}
+                <div class="error" style="color: red;">{{ form.confirm_password.errors[0] }}</div>
+            {% endif %}
+            
+            <button type="submit">Signup</button>
+        </form>
+        
+    </div>
+</body>
+</html>

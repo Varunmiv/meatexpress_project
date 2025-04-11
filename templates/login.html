@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Meat Express</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/logn.css') }}">
+</head>
+<body>
+    <!-- Flash messages container above the login container -->
+    <div class="flash-messages">
+            {% with messages = get_flashed_messages(with_categories=True) %}
+                {% if messages %}
+                    <div class="alert-container">
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+     </div>
+    <div class="login-container">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Meat Express Logo" class="logo">
+        <h2>Login</h2>
+        <form id="login-form" method="POST" action="{{ url_for('login') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="login-email">Email:</label>
+                {{ form.email(class="form-control", id="login-email") }}
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password:</label>
+                {{ form.password(class="form-control", id="login-password") }}
+            </div>
+            <div class="form-group">
+                {{ form.remember(class="form-check-input") }} {{ form.remember.label(class="form-check-label") }}
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div class="signup-link">
+            Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a>
+        </div>
+        <div class="admin-login">
+            Are you Admin?  <a href="{{ url_for('admin_login') }}">Admin Login</a>
+         </div>
+    </div>
+</body>
+</html>
