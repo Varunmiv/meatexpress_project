@@ -13,7 +13,7 @@ pipeline {
                     branches: [[name: '*/master']],
                     userRemoteConfigs: [[
                         url: 'https://github.com/varunmiv/meatexpress_project.git',
-                        credentialsId: 'github-pat'  // Replace this with actual GitHub PAT credentials ID
+                        credentialsId: 'github-pat'  // Replace with your GitHub PAT credentials ID
                     ]]
                 ])
             }
@@ -38,7 +38,9 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh "kubectl set image deployment/deployment.yaml meatexpress=$DOCKER_IMAGE:$TAG --namespace=default"
+                withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+                    sh "kubectl set image deployment/meatexpress-deployment meatexpress=$DOCKER_IMAGE:$TAG --namespace=default"
+                }
             }
         }
     }
