@@ -39,7 +39,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
-                    sh "kubectl set image deployment/meatexpress-deployment meatexpress=$DOCKER_IMAGE:$TAG --namespace=default"
+                    sh "kubectl set image deployment/deployment meatexpress=$DOCKER_IMAGE:$TAG --namespace=default"
                 }
             }
         }
