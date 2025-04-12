@@ -44,7 +44,7 @@ pipeline {
                     sh 'kubectl apply -f k8s/service.yaml --namespace=default'
                     
                     // Optional: Set the image to the new version
-                    sh "kubectl set image deployment/my-app meatexpress=$DOCKER_IMAGE:$TAG --namespace=default"
+                    sh "kubectl set image deployment/my-app my-app-container=$DOCKER_IMAGE:$TAG --namespace=default"
                 }
             }
         }
