@@ -39,7 +39,12 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
-                    sh "kubectl set image deployment/deployment meatexpress=$DOCKER_IMAGE:$TAG --namespace=default"
+                    // Apply the deployment and service files from the 'k8s' folder
+                    sh 'kubectl apply -f k8s/deployment.yaml --namespace=default'
+                    sh 'kubectl apply -f k8s/service.yaml --namespace=default'
+                    
+                    // Optional: Set the image to the new version
+                    sh "kubectl set image deployment/meatexpress-deployment meatexpress=$DOCKER_IMAGE:$TAG --namespace=default"
                 }
             }
         }
