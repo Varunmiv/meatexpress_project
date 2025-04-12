@@ -11,4 +11,5 @@ spec:
     - protocol: TCP
       port: 80          # External port
       targetPort: 5001  # Container port
+      nodeport: 32000
   type: LoadBalancer    # Use NodePort if you're not on a cloud provider
