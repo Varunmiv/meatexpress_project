@@ -9,7 +9,13 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/varunmiv/meatexpress.git'
+                checkout([$class: 'GitSCM',
+                    branches: [[name: '*/master']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/varunmiv/meatexpress_project.git',
+                        credentialsId: 'github-pat'  // Replace this with actual GitHub PAT credentials ID
+                    ]]
+                ])
             }
         }
 
