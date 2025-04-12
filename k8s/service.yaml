@@ -1,0 +1,13 @@
+  GNU nano 8.2                      serviceapiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 80  # External port
+      targetPort: 5001  # Container port
+  type: LoadBalancer  # If you're using a cloud provider (e.g., AWS, GCP)
+

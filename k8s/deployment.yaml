@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  labels:
+    app: my-app
+spec:
+  replicas: 1  # Number of pods you want
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: varunmiv/meatexpress:v2
+        ports:
+        - containerPort: 5001  # Replace with the port your app uses
+        env:
+        - name: ENV_VAR_NAME
+          value: "value"  # Optional: Set environment variables for your app
